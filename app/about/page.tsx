@@ -1,46 +1,48 @@
 import React from 'react'
-import Link from 'next/link'
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-forest-green text-baby-pink p-8">
-      <h1 className="text-4xl font-bold font-fairy text-center mb-6">My Top 3 Favourite Songs 🎶</h1>
+    <div className="min-h-screen bg-pink-50 text-navy-blue p-8 flex items-center justify-center font-fairy">
+      <div className="bg-white bg-opacity-80 rounded-3xl p-8 shadow-xl max-w-4xl w-full">
+        <h1 className="text-dark-pink text-4xl font-extrabold rounded-xl p-6 shadow-md text-center mb-10 select-none">
+          🎶 My Favourite Songs 🎶
+        </h1>
 
-      <div className="flex flex-wrap justify-center gap-6">
-        <div className="w-72">
-          <iframe
-            className="w-full h-full rounded-lg"
-            src="https://www.youtube.com/embed/dUP7fA2BAfw"
-            title="Louisa – Lord Huron"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <p className="mt-2 text-center text-baby-blue">Louisa – Lord Huron</p>
-        </div>
-
-        <div className="w-72">
-          <iframe
-            className="w-full h-full rounded-lg"
-            src="https://www.youtube.com/embed/cJRP3LRcUFg"
-            title="This Charming Man – The Smiths"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <p className="mt-2 text-center text-baby-blue">This Charming Man – The Smiths</p>
-        </div>
-
-        <div className="w-72">
-          <iframe
-            className="w-full h-full rounded-lg"
-            src="https://www.youtube.com/embed/Jl8iYAo90pE"
-            title="Caribbean Blue – Enya"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <p className="mt-2 text-center text-baby-blue">Caribbean Blue – Enya</p>
+        <div className="flex flex-wrap justify-center gap-8">
+          {[
+            {
+              src: "https://www.youtube.com/embed/dUP7fA2BAfw",
+              title: "Louisa – Lord Huron",
+              color: "text-baby-blue",
+            },
+            {
+              src: "https://www.youtube.com/embed/cJRP3LRcUFg",
+              title: "This Charming Man – The Smiths",
+              color: "text-baby-pink",
+            },
+            {
+              src: "https://www.youtube.com/embed/Jl8iYAo90pE",
+              title: "Caribbean Blue – Enya",
+              color: "text-baby-purple",
+            },
+          ].map(({ src, title, color }) => (
+            <div
+              key={title}
+              className="w-72 bg-pink-100 rounded-xl shadow-md p-3 hover:shadow-xl transition-shadow duration-300"
+            >
+              <iframe
+                className="w-full h-44 rounded-lg border-4 border-pink-200"
+                src={src}
+                title={title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+              <p className={`mt-3 text-center font-semibold ${color} select-none`}>
+                {title}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

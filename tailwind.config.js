@@ -7,11 +7,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'forest-green': '#2E6F40', // Add forest green
-        'sage-green': '#9C9F84',  // Add sage green
-        'baby-pink': '#F7A7C1',   // Add baby pink
-        'baby-blue': '#89CFF0', // Add baby blue
-        'lavender': '#967bb6', // Add lavender
+        'forest-green': '#2E6F40',
+        'sage-green': '#A8DDAC',
+        'baby-pink': '#F7A7C1',
+        'navy-blue': '#202A44',
+        'lavender': '#967bb6',
+        'dark-pink': '#AA336A',
       },
       fontFamily: {
         fairy: ['Dancing Script', 'cursive'], // Add Dancing Script font
